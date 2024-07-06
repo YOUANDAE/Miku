@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ミクダヨー：D</title>
+
+    <style>
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: #232323;
+    background: url('background.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    text-align: center;
+    background: #272727;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#messageContainer {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    background-color: #e0e0e0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.button-group {
+    margin-bottom: 20px;
+}
+
+.stylish-button {
+    background: #40ecff;
+    border: none;
+    color: #fff;
+    padding: 15px 30px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    border-radius: 5px;
+}
+
+.stylish-button:hover {
+    background: #40ecff;
+}
+
+.item-button {
+    background: #ff4040;
+    border: none;
+    color: #fff;
+    padding: 15px 30px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    border-radius: 5px;
+}
+
+.item-button:hover {
+    background: #ff4040;
+}
+
+#imageContainer {
+    margin-top: 20px;
+}
+
+#displayImage {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #40ecff;
+    border-radius: 5px;
+}
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="button-group">
+            <button id="18-check" class="stylish-button" style="display: inline-block;">はい</button>
+            <button id="start" class="stylish-button" style="display: none;">ゲームを始める</button>
+            <button id="next" class="stylish-button" style="display: none;">next</button>
+            <button id="Soren" class="stylish-button" style="display: none;">ソ連国家が聞こえる部屋</button>
+            <button id="GenGen" class="stylish-button" style="display: none;">イギリス英語発音が聞こえる部屋</button>
+            <button id="Daniel" class="stylish-button" style="display: none;">円周率の歌が聞こえる部屋</button>
+            <button id="Fan" class="stylish-button" style="display: none;">ファンの音が聞こえる部屋</button>
+            <button id="mikudayo" class="stylish-button" style="display: none;">ミクダヨー：D</button>
+
+            <button id="next2" class="stylish-button" style="display: none;">next</button>
+            <button id="Move" class="stylish-button" style="display: none;">行動</button>
+            <button id="Kill" class="stylish-button" style="display: none;">殺す</button>
+            <button id="next3" class="stylish-button" style="display: none;">next</button>
+            <button id="Search" class="stylish-button" style="display: none;">探索</button>
+            <button id="Home" class="stylish-button" style="display: none;">ホーム</button>
+
+            <button id="item" class="stylish-button" style="display: none;">アイテム</button>
+
+            <button id="power_talk" class="stylish-button" style="display: none;">武力行使</button>
+
+            <button id="next4" class="stylish-button" style="display: none;">next</button>
+
+
+            <button id="next5" class="stylish-button" style="display: none;">next</button>
+            <button id="Join" class="stylish-button" style="display: none;">仲間にする</button>
+            <button id="Search2" class="stylish-button" style="display: none;">探索</button>
+            <button id="Home" class="stylish-button" style="display: none;">ホーム</button>
+
+            <button id="next6" class="stylish-button" style="display: none;">next</button>
+            <button id="machine" class="stylish-button" style="display: none;">研究について</button>
+            <button id="about_euclid" class="stylish-button" style="display: none;">ユークリッド原論を渡す</button>
+
+            <button id="Make_boom" class="stylish-button" style="display: none;">水素爆弾を調合する</button>
+
+            <button id="one" class="stylish-button" style="display: none;">1</button>
+            <button id="two" class="stylish-button" style="display: none;">2</button>
+            <button id="three" class="stylish-button" style="display: none;">3</button>
+            <button id="four" class="stylish-button" style="display: none;">4</button>
+            <button id="five" class="stylish-button" style="display: none;">5</button>
+            <button id="six" class="stylish-button" style="display: none;">6</button>
+            <button id="seven" class="stylish-button" style="display: none;">7</button>
+            <button id="eight" class="stylish-button" style="display: none;">8</button>
+            <button id="nine" class="stylish-button" style="display: none;">9</button>
+            <button id="zero" class="stylish-button" style="display: none;">0</button>
+
+            <button id="break_door" class="stylish-button" style="display: none;">ドアを水素爆発で吹き飛ばす</button>
+
+            <button id="next7" class="stylish-button" style="display: none;">next</button>
+            <button id="enable_nahi" class="stylish-button" style="display: none;">ナヒちゃん検出アルゴリズムを使用する</button>
+
+            <button id="gain_nahi" class="stylish-button" style="display: none;">nahida.exe</button>
+
+            <button id="next8" class="stylish-button" style="display: none;">next</button>
+
+            <button id="hossi-" class="item-button" style="display: none;">ごめんね！ホシノ先輩！</button>
+            <button id="M1911" class="item-button" style="display: none;">M1911拳銃</button>
+            <button id="Alumi" class="item-button" style="display: none;">アルミホイル</button>
+            <button id="bottle" class="item-button" style="display: none;">ペットボトル</button>
+            <button id="euclid" class="item-button" style="display: none;">ユークリッド原論</button>
+            <button id="usb" class="item-button" style="display: none;">USB</button>
+            <button id="hu_sen" class="item-button" style="display: none;">風船</button>
+            <button id="senzai" class="item-button" style="display: none;">洗剤</button>
+            <button id="suiso_bakudan" class="item-button" style="display: none;">水素爆弾</button>
+            <button id="boot_nahi" class="item-button" style="display: none;">NAHIDA.exe</button>
+            <button id="sisuko-n" class="item-button" style="display: none;">シスコーン</button>
+
+
+
+        </div>
+
+
+        <audio id="Hanko-ki" src="hanko-ki.wav"></audio>
+        <audio id="halo_sensei" src="halo_sensei.wav"></audio>
+        <audio id="time_arona" src="its_channel_arona.wav"></audio>
+        <audio id="otitukeyo" src="orewo_mite.wav"></audio>
+        <audio id="dosukoi" src="dosukoi.wav"></audio>
+        <audio id="hatopoppo" src="hatopoppo.wav"></audio>
+        <audio id="tyaroku" src="tyaroku.wav"></audio>
+        <audio id="namennnayo-" src="namennnayo-.wav"></audio>
+        <audio id="arisu_know" src="arisu_know.wav"></audio>
+        <audio id="soren_kokka" src="soren_kokka.wav"></audio>
+        <audio id="sikyo" src="sikyo.mp3"></audio>
+        <audio id="get-hossi-" src="get_hossi-.mp3"></audio>
+        <audio id="get_M1911_" src="get_M1911.mp3"></audio>
+        <audio id="item_oku" src="item_oku.mp3"></audio>
+        <audio id="big_bang" src="big_bang.mp3"></audio>
+        <audio id="TITLE_BGM" src="TITLE_BGM.mp3"></audio>
+        <audio id="welcome_gengen" src="welcome_gengen.wav"></audio>
+        <audio id="naht" src="naht.wav"></audio>
+        <audio id="otitukeyo2" src="otitukeyo2.wav"></audio>
+        <audio id="daniel_thanks" src="thanks_daniel.wav"></audio>
+        <audio id="daniel1" src="daniel_1.wav"></audio>
+        <audio id="daniel2" src="daniel_2.wav"></audio>
+        <audio id="daniel3" src="daniel_3.wav"></audio>
+        <audio id="bang" src="bang.mp3"></audio>
+        <audio id="boom" src="door_break.mp3"></audio>
+        <audio id="FBIda" src="FBI_channel.wav"></audio>
+        <audio id="nahida_exe_sound" src="nahida_exe.mp3"></audio>
+        <audio id="teriteri" src="teriteri--.wav"></audio>
+        <audio id="mikudayo_single" src="mikudayo-single.wav"></audio>
+        <audio id="mikudayo_door_lock" src="mikudayo-door-lock.wav"></audio>
+        <audio id="urusaiwa" src="urusaiwa.wav"></audio>
+        <audio id="kusosupa" src="kusosupa.wav"></audio>
+        <audio id="konnahi" src="konnahi.wav"></audio>
+        <audio id="nahi_e" src="nahi_e.wav"></audio>
+        <audio id="sisuko-n_dayo" src="sisuko-n_dayo.wav"></audio>
+        <audio id="nanka_data" src="nanka_data.wav"></audio>
+        <audio id="anatano_kansou" src="anatano_kansou.wav"></audio>
+        <audio id="tobu_higher" src="tobu_higher.wav"></audio>
+        <audio id="hakusyu" src="hakusyu.mp3"></audio>
+        <audio id="omg" src="omg.wav"></audio>
+        <audio id="kowai_bgm" src="kowai_bgm.wav"></audio>
+        <audio id="eat_sisuko-n" src="eat_sisuko-n.mp3"></audio>
+        
+
+
+
+
+
+        <div id="messageContainer">このゲームは成人対象のコンテンツやアロナコンテンツ、またイギリス英語発音を含みます、あなたは18歳以上ですか？</div>
+        <div id="imageContainer">
+            <img id="displayImage" src="" alt="">
+        </div>
+    </div>
+
+
+
+    <script>
+        let messages = [
+    '・・・',
+    'ここは・・？',
+    '？？？：やあ',
+    '？？？：目が覚めたみたいだね',
+    '...',
+    'くうた：俺の名前はくうた',
+    'くうた：目が覚めたらここにいたんだ',
+    'くうた：君は、、？',
+    'あ・・自分も目が覚めたら・・',
+    'くうた：そっか、だよね。',
+    'くうた：こんな状況だから、大変だけど、',
+    'くうた：まあ俺をみて、落ち着けよ（すーぱーはいぱーいけぼ）',
+    '？？？：どすこい:D',
+    'えっと、、あなたは、、？',
+    'まさる：鳩ぽっぽのまさるだ:D',
+    'あなたも、、目が覚めたらここに、、？',
+    'まさる：チャ録頼むぜーー:D',
+    'あ・・・（察）',
+    'アロナてゃん：舐めんなよー：D',
+    '・・・・・・',
+    'みなさん、気づいたらここにいた感じですか？（無視）',
+    'くうた：うん、俺はさっき言った通り',
+    'まさる：どすこい：D',
+    'アロナてゃん：舐めんなよー：D',
+    'ここ、、どこなんですかね、、',
+    'まさる：とりあえず、上に上がってみたらいいと思うぜ：Ｄどすこい：Ｄ',
+    'くうた：ああ、俺もそれがいいと思う。',
+    'アロナてゃん：舐めんなよー：D',
+    '移動中...',
+    '・・・',
+    'まさる：上は意外と普通な感じだな',
+    'アロナてゃん：だな！！：D',
+    'くうた：いくつか部屋があるみたいだけど、、',
+    'どうする？',
+    ];
+
+    let soren = [
+    '...',
+    'ソ連国家が流れる異様な空間に男が佇んでいた、、',
+    'まさる：なんか散らかった部屋だな',
+    'アロナてゃん：臭い！！：D',
+    'くうた：すいません、、あの、、',
+    '謎の男：・・・',
+    '反応がないようだ、どうする？',
+    ];
+
+    let soren_kill = [
+    '...',
+    '謎の男：何？やんの？',
+    '謎の男：俺怒ると怖いよ？笑',
+    '謎の男：(おもちゃの刀を舐めながら)二チャァ...',
+    'アロナてゃん：おうおう、こんにちは先生(広義)：Ｄ',
+    'アロナてゃん：アロナちゃんねるのお時間だよ：Ｄ',
+    '謎の男：えちょ',
+    '(※反抗期)',
+    'まさる：ふぅ',
+    'まさる：なんとかなったみたいだな',
+    'アロナちゃん：舐めんなよー：D',
+    'どうする？',
+    '',
+    ];
+
+    let gengen = [
+    '...',
+    'げんげん：言語の部屋へようこそ',
+    'くうた：あ、、どうも、、',
+    'まさる：どすこい：D',
+    'どうする？',
+    ];
+
+    let gengen_join = [
+    '...',
+    'くうた：あの、僕たち急にここにきて、、',
+    'くうた：困ってるんですけど、、',
+    'くうた：脱出の協力とかって、、してくれませんかね、、',
+    'げんげん：申し訳ないんですが、、、',
+    'げんげん：私は言語の研究で手一杯なので、、',
+    'げんげん：他をあたっていただけませんかね、、',
+    'くうた：あ、、ですよね、、すいません、、',
+    ];
+
+    let gengen_join_suru = [
+    '...',
+    'げんげん：あの、、その、、',
+    'げんげん：その手に持ってる本をいただけませんかね、、',
+    'くうた：え、あ、、いいですよ、、',
+    'ごめんね、ホシノ先輩！！を渡した。',
+    'げんげん：ありがとうございます',
+    'げんげん：何かあったらお呼びください',
+    'げんげんが仲間になった！！',
+    ];
+
+    let daniel = [
+    '...',
+    'まさる：どすこい：D',
+    'ダニエル:どうも：）',
+    'どうする？',
+    ];
+
+    let daniel_machine = [
+    '...',
+    'まさる：どすこい？',
+    'ダニエル:私かい？私はここであるアルゴリズムを研究してるんだ、、',
+    'まさる：どすどすこい？',
+    'ダニエル：Nahidaという生物を検出するアルゴリズムの研究だよ、、',
+    'まさる：どすーんこい？',
+    'ダニエル：ただなかなか良いシステムが思い浮かばなくて、、まぁ研究にはつきものだが。',
+    'まさる：どすこい：D',
+    ];
+
+    let daniel_euclid = [
+    '...',
+    'ダニエル：これは、、ユークリッドの原論、、？',
+    'ダニエル:ここにあるアルゴリズムを応用すれば、、',
+    'まさる：どすこい：D',
+    'ダニエル：よし、、ついにNahida検出アルゴリズムができたぞ、、',
+    'まさる：どすこい：D',
+    'ダニエル：ありがとう、君たちのおかげだ、これをお礼に、、',
+    'Nahida検出アルゴリズム(入りUSB)を手に入れた！',
+    ];
+
+    let power_talk = [
+    '...',
+    'まさる：おいてめぇ、、：（',
+    'まさる:出すもんだせや、、：（',
+    'げんげん：あの、、何をいって、、',
+    '(まさるが床に向けて発砲する)',
+    'まさる：とぼけるんじゃねぇ、、：（',
+    'げんげん：・・・ッ',
+    '洗剤を強奪した！',
+    '風船を強奪した！',
+    ];
+
+    let mikudayo = [
+    '...',
+    '？？？：ミクダヨー：D',
+    'くうたくん：！？',
+    'まさる：！？',
+    'アロナてゃん：（？）',
+    'ドアを閉められた！！',
+    '？？？：お前ら許さん：（',
+    '？？？：いっつも等身大３９３９の方だけ持ち上げて',
+    '？？？：ミクダヨー：Dはまるでネタキャラみたいじゃないか、、',
+    '？？？：ミクダヨー：Dもかわいいって言われていいはずだ！！',
+    '？？？：世の中間違ってる！！',
+    '？？？：ミクダヨー：Dも一人の３９３９なんだぞ、、',
+    '？？？：それを一般３９３９ばっか「かわいい！」「かっこいい！」って、、',
+    '？？？：ミクダヨー：Dは所詮ネタ扱いかよ：（',
+    '？？？：お前らなんか、、',
+    '？？？：お前らなんか、、、、',
+    '？？？：４ね！！！！（唐突）',
+    'GAMEOVER:まさる達は得体のしれない水色の生き物に襲われてしまった！',
+    ];
+
+    let mikudayo_withNahi = [
+    '...',
+    '？？？：ミクダヨー：D',
+    'くうたくん：！？',
+    'まさる：！？',
+    'アロナてゃん：（？）',
+    'ドアを閉められた！！',
+    '？？？：お前ら許さん：（',
+    '？？？：いっつも等身大３９３９の方だけ持ち上げて',
+    '？？？：ミクダヨー：Dはまるでネタキャラみたいじゃないか、、',
+    '？？？：ミクダヨー：Dもかわいいって言われていいはずだ！！',
+    '？？？：世の中間違ってる！！',
+    '？？？：ミクダヨー：Dも一人の３９３９なんだぞ、、',
+    '？？？：それを一般３９３９ばっか「かわいい！」「かっこいい！」って、、',
+    '？？？：ミクダヨー：Dは所詮ネタ扱いかよ：（',
+    '？？？：お前らなんか、、',
+    '？？？：お前らなんか、、、、',
+    '？？？：４ね！！！！（唐突）',
+    'ナヒちゃん：うるさいわ！！（ガチギレ台パン)',
+    '？？？：！？！？！？',
+    'ナヒちゃん：あなたそんなこと言ってる暇あったら！！（くそでかボイス）',
+    'ナヒちゃん：スパチャの一つでもしなさい！！！！（くそでかボイス）',
+    '？？？：え、、、（汗）',
+    '？？？：え、、、、、（涙目）',
+    '？？？：え、、、、、、、、（泣）',
+    'ナヒちゃん：ふっ、、：D',
+    '？？？：でもお前ミクダヨー：Dより人気ないやん：D',
+    'ナヒちゃん：え”（致命傷）',
+    'GAMEOVER:まさる達は得体のしれない水色の生き物に襲われてしまった！',
+    ];
+
+    let mikudayo_withHiroyuki = [
+    '...',
+    '？？？：ミクダヨー：D',
+    'くうたくん：！？',
+    'まさる：！？',
+    'アロナてゃん：（？）',
+    'ドアを閉められた！！',
+    '？？？：お前ら許さん：（',
+    '？？？：いっつも等身大３９３９の方だけ持ち上げて',
+    '？？？：ミクダヨー：Dはまるでネタキャラみたいじゃないか、、',
+    '？？？：ミクダヨー：Dもかわいいって言われていいはずだ！！',
+    '？？？：世の中間違ってる！！',
+    '？？？：ミクダヨー：Dも一人の３９３９なんだぞ、、',
+    '？？？：それを一般３９３９ばっか「かわいい！」「かっこいい！」って、、',
+    '？？？：ミクダヨー：Dは所詮ネタ扱いかよ：（',
+    '？？？：お前らなんか、、',
+    '？？？：お前らなんか、、、、',
+    '？？？：４ね！！！！（唐突）',
+    'ナヒちゃん：うるさいわ！！（ガチギレ台パン)',
+    '？？？：！？！？！？',
+    'ナヒちゃん：あなたそんなこと言ってる暇あったら！！（くそでかボイス）',
+    'ナヒちゃん：スパチャの一つでもしなさい！！！！（くそでかボイス）',
+    '？？？：え、、、（汗）',
+    '？？？：え、、、、、（涙目）',
+    '？？？：え、、、、、、、、（泣）',
+    'ナヒちゃん：ふっ、、：D',
+    '？？？：でもお前ミクダヨー：Dより人気ないやん：D',
+    'ナヒちゃん：え”（致命傷）',
+    '？？？：ふっ：D', 
+    'まさる：くっ、、',
+    'くうた：もうナヒちゃんでも勝てないなら、、',
+    'くうた：こんなの、、誰も、、',
+    'くうた：倒せな、、、',
+    '(爆発音)', 
+    '一同：！？！？！？！？',
+    'まさる：あ、、',
+    'まさる：あなたは！！',
+    '一同:(シスコーンににおいを嗅ぎつけてやってきた)ひろゆき！！',
+    'ひろゆき：あのなんだろう',
+    'ひろゆき：僕ぅ、外から聞いてたんですけどぉ、、',
+    'ひろゆき：ナヒちゃんのほうがミクダヨー：Dより人気ないのってぇ、、',
+    'ミクダヨー：え、、、',
+    'ひろゆき：なんかそういうデータあるんすか？',
+    'ミクダヨー：え、、',
+    'ミクダヨー：いや、、',
+    'ミクダヨー：ない、、けど、、',
+    'ひろゆき：あのじゃあそれってぇ、、',
+    'ひろゆき：あなたの感想ですよね（笑）',
+    'ミクダヨー：え、、、、、、、、、、、、、、、',
+    'ひろゆき：ナヒちゃんのほうが人気じゃないんすか？笑',
+    'ミクダヨー：ミ、、、、',
+    'ミクダヨー：ミーーーーー😭😭😭（爆発四散)',
+    'まさる：ふぅ',
+    'まさる：なんとかなったみたいだな',
+    'アロナてゃん：だな！：D',
+    'その後、無事脱出した僕たちは',
+    'それぞれが平和な暮らしに戻っていた',
+    'まさるは「ウィッキーTV」を開設して大物YouTuberに、、',
+    'アロナてゃんは「アロナチャンネル」で一躍人気キャラに、、',
+    'くうたは「くうたSKH」というマイクラチャンネルを開設して頑張ってる、、、',
+    'みんなミクダヨー誘拐洗脳事件の事を乗り越え',
+    '日々を過ごしている、、',
+    '僕も就活頑張ろう！！',
+    '-HappyEnd- (尚全員無職)',
+    ];
+
+
+
+    let messageIndex = 0;
+
+    let counter = 0;
+    
+    let hattori_killed = 0;
+    let hattori_enter = 0;
+    let get_hossi_ = 0;
+    let get_M1911 = 0;
+    let get_Alumi = 0;
+
+    let get_bottle = 0;
+    let get_gengen = 0;
+    let get_euclid = 0;
+
+    let get_usb = 0;
+
+    let get_hu_sen = 0;
+    let get_senzai = 0;
+
+    let get_suiso_bakudan = 0;
+
+    let did_break_door = 0;
+    let booting_nahi = 0;
+
+    let get_nahi = 0;
+
+    let get_sisuko_n = 0;
+    let ate_sisuko_n = 0;
+
+    let stay_gengen = 0;
+    let stay_soren = 0;
+    let stay_daniel = 0;
+    let stay_computer = 0;
+
+
+    document.getElementById('item').addEventListener('click', function() {
+        if(get_Alumi && get_suiso_bakudan == 0){
+            document.getElementById('Alumi').style.display = 'inline-block';
+        }
+        if(get_hossi_ && get_gengen == 0){
+            document.getElementById('hossi-').style.display = 'inline-block';
+        }
+        
+        if(get_M1911){
+            document.getElementById('M1911').style.display = 'inline-block';
+        }
+        if(get_bottle && get_suiso_bakudan == 0){
+            document.getElementById('bottle').style.display = 'inline-block';
+        }
+        if(get_euclid && get_usb == 0){
+            document.getElementById('euclid').style.display = 'inline-block';
+        }
+        if(get_usb && booting_nahi == 0){
+            document.getElementById('usb').style.display = 'inline-block';
+        }
+        if(get_hu_sen && get_suiso_bakudan == 0){
+            document.getElementById('hu_sen').style.display = 'inline-block';
+        }
+        if(get_senzai && get_suiso_bakudan == 0){
+            document.getElementById('senzai').style.display = 'inline-block';
+        }
+        if(get_suiso_bakudan && did_break_door == 0){
+            document.getElementById('suiso_bakudan').style.display = 'inline-block';
+        }
+        if(booting_nahi){
+            document.getElementById('boot_nahi').style.display = 'inline-block';
+        }
+        if(get_sisuko_n && ate_sisuko_n == 0){
+            document.getElementById('sisuko-n').style.display = 'inline-block';
+        }
+    });
+
+    document.getElementById('hossi-').addEventListener('click', function() {
+        if(stay_gengen){
+            if(get_gengen){
+                document.getElementById('messageContainer').textContent = 'げんげんは既に仲間になっています。';
+                    }else if(get_hossi_){
+                    counter++;
+                    if(counter == 4){
+                    document.getElementById('naht').play();
+                document.getElementById('displayImage').src = 'gengen_join_suru.png';
+                    }else if(counter == 7){
+                    get_gengen = 1;
+                    document.getElementById('otitukeyo2').play();
+                }
+                updateMessage_gengen_join_suru();
+                    }else{
+                    counter++;
+                    if(counter == 4){
+                    document.getElementById('naht').play();
+                    document.getElementById('displayImage').src = 'gengen_join.png';
+                }else if(counter == 7){
+                    document.getElementById('otitukeyo2').play();
+                }
+                updateMessage_gengen_join();
+            }
+        }
+    });
+
+    document.getElementById('M1911').addEventListener('click', function() {
+        if(stay_gengen){
+            if(get_usb && get_hu_sen == 0){
+                counter++; 
+    if(counter == 1){
+        document.getElementById('displayImage').src = 'power_talk_1.png';
+    }else if(counter == 4){
+        document.getElementById('displayImage').src = 'power_talk_2.png';
+        document.getElementById('bang').play();
+    }else if(counter == 5){
+        document.getElementById('displayImage').src = 'power_talk_1.png';
+    }else if(counter == 7){
+        document.getElementById('item_oku').play();
+        document.getElementById('displayImage').src = 'senzai_item.png';
+        get_senzai = 1;
+    }else if(counter == 8){
+        document.getElementById('item_oku').play();
+        document.getElementById('displayImage').src = 'hu-sen_item.png';
+        get_hu_sen = 1;
+    }
+    updateMessage_power_talk();
+            }
+        }
+    });
+
+    document.getElementById('boot_nahi').addEventListener('click',function(){
+        if(stay_gengen){
+            if(booting_nahi && get_nahi == 0){
+                document.getElementById('messageContainer').textContent = 'ナヒちゃんを捕縛した！';
+                document.getElementById('displayImage').src = 'nahi_chan_item.png';
+                document.getElementById('teriteri').play();
+                get_nahi = 1;
+            }
+        }
+    })
+
+    
+
+    document.getElementById('bottle').addEventListener('click',function(){
+        if(stay_soren){
+            if(get_bottle && get_Alumi && get_hu_sen && get_senzai && get_suiso_bakudan == 0){
+            get_suiso_bakudan = 1;
+            document.getElementById('displayImage').src = 'suiso_bakudan_item.png';
+            document.getElementById('item_oku').play();
+            document.getElementById('messageContainer').textContent = '簡易水素爆弾を調合した！';
+            }
+        }
+        
+        
+    });
+
+    document.getElementById('euclid').addEventListener('click',function(){
+        if(stay_daniel){
+            if(get_euclid){
+                if(!(get_usb)){
+        counter++;
+        document.getElementById('displayImage').src = 'daniel_room.png';
+        if(counter == 3){
+            document.getElementById('dosukoi').play();
+        }else if(counter == 5){
+            document.getElementById('dosukoi').play();
+        }else if(counter == 7){
+            get_usb = 1;
+            document.getElementById('item_oku').play();
+            document.getElementById('displayImage').src = 'daniel_room_euclid.png';
+        }
+        updateMessage_daniel_euclid();
+    }
+            }
+        }
+    });
+
+    
+
+    document.getElementById('suiso_bakudan').addEventListener('click',function(){
+        if(stay_computer){
+            if(get_suiso_bakudan){
+                counter = 0;
+    messageIndex = 0;
+
+    did_break_door = 1;
+
+    document.getElementById('messageContainer').textContent = 'ドアを水素爆発で吹き飛ばした！';
+    document.getElementById('next7').style.display = 'inline-block';
+
+    document.getElementById('Home').style.display = 'none';
+
+    document.getElementById('displayImage').src = 'door_break.png';
+    document.getElementById('boom').play();
+    document.getElementById('FBIda').play();
+
+    document.getElementById('one').style.display = 'none';
+    document.getElementById('two').style.display = 'none';
+    document.getElementById('three').style.display = 'none';
+    document.getElementById('four').style.display = 'none';
+    document.getElementById('five').style.display = 'none';
+    document.getElementById('six').style.display = 'none';
+    document.getElementById('seven').style.display = 'none';
+    document.getElementById('eight').style.display = 'none';
+    document.getElementById('nine').style.display = 'none';
+    document.getElementById('zero').style.display = 'none';
+    document.getElementById('break_door').style.display = 'none';
+
+    document.getElementById('item').style.display = 'none';
+
+    document.getElementById('Alumi').style.display = 'none';
+    document.getElementById('hossi-').style.display = 'none';
+    document.getElementById('M1911').style.display = 'none';
+    document.getElementById('bottle').style.display = 'none';
+    document.getElementById('euclid').style.display = 'none';
+    document.getElementById('usb').style.display = 'none';
+    document.getElementById('hu_sen').style.display = 'none';
+    document.getElementById('senzai').style.display = 'none';
+    document.getElementById('suiso_bakudan').style.display = 'none';
+    document.getElementById('boot_nahi').style.display = 'none';
+    document.getElementById('sisuko_n').style.display = 'none';
+
+
+            }
+        }
+    });
+
+    
+
+    document.getElementById('usb').addEventListener('click', function() {
+        if(stay_computer && did_break_door){
+            document.getElementById('messageContainer').textContent = 'ナヒちゃん検出アルゴリズムを起動した！';
+            document.getElementById('displayImage').src = 'nahida_exe_item.png';
+            document.getElementById('nahida_exe_sound').play();
+            booting_nahi = 1;
+        }
+    });
+
+    document.getElementById('sisuko-n').addEventListener('click', function() {
+        ate_sisuko_n = 1;
+        document.getElementById('eat_sisuko-n').play();
+        document.getElementById('messageContainer').textContent = 'シスコーンを食べた！何かが変わった気がする、、、';
+    });
+
+    document.getElementById('18-check').addEventListener('click', function() {
+        document.getElementById('messageContainer').textContent = '3939 -You can call me MIKU-';
+        document.getElementById('18-check').style.display = 'none';
+        document.getElementById('start').style.display = 'inline-block';
+        document.getElementById('displayImage').src = 'title_screen.png';
+        document.getElementById('TITLE_BGM').play();
+    });
+    
+    
+
+        document.getElementById('start').addEventListener('click', function() {
+            document.getElementById('TITLE_BGM').pause();
+            document.getElementById('TITLE_BGM').currentTime = 0;
+            
+    document.getElementById('displayImage').src = 'basement_1.png';
+    document.getElementById('messageContainer').textContent = '...';
+    document.getElementById('next').style.display = 'inline-block';
+    document.getElementById('start').style.display = 'none';        
+
+
+});
+
+document.getElementById('next').addEventListener('click', function() {
+    counter++;
+    if(counter == 5){
+        document.getElementById('displayImage').src = 'basement_2.png';
+    }else if(counter == 12){
+        document.getElementById('otitukeyo').play();
+    }else if(counter == 13){
+        document.getElementById('dosukoi').play();
+        document.getElementById('displayImage').src = 'basement_3.png';
+    }else if(counter == 15){
+        document.getElementById('hatopoppo').play();
+    }else if(counter == 17){
+        document.getElementById('tyaroku').play();
+        document.getElementById('displayImage').src = 'basement_3-2.png';
+    }else if(counter == 19){
+        document.getElementById('namennnayo-').play();
+        document.getElementById('displayImage').src = 'basement_4.png';
+    }else if(counter == 23){
+        document.getElementById('dosukoi').play();
+    }else if(counter == 24){
+        document.getElementById('namennnayo-').play();
+    }else if(counter == 29){
+        document.getElementById('arisu_know').play();
+        document.getElementById('displayImage').src = 'move_now.png';
+    }else if(counter == 30){
+        document.getElementById('arisu_know').pause();
+        document.getElementById('arisu_know').currentTime = 0;
+        document.getElementById('displayImage').src = 'home_1.png';
+    }else if(counter == 35){
+        counter = 0;
+        messageIndex = 0;
+        document.getElementById('next').style.display = 'none';
+        document.getElementById('Soren').style.display = 'inline-block';
+        document.getElementById('GenGen').style.display = 'inline-block';
+        document.getElementById('Fan').style.display = 'inline-block';
+        document.getElementById('Daniel').style.display = 'inline-block';
+        document.getElementById('mikudayo').style.display = 'inline-block';
+    }
+    updateMessage_ep1()
+});
+
+
+document.getElementById('mikudayo').addEventListener('click', function() {
+    counter = 0;
+    messageIndex = 0;
+
+    document.getElementById('arisu_know').play();
+    document.getElementById('displayImage').src = 'move_now.png';
+    document.getElementById('next8').style.display = 'inline-block';
+    document.getElementById('Soren').style.display = 'none';
+    document.getElementById('GenGen').style.display = 'none';
+    document.getElementById('Fan').style.display = 'none';
+    document.getElementById('Daniel').style.display = 'none';
+    document.getElementById('mikudayo').style.display = 'none';
+});
+
+document.getElementById('next8').addEventListener('click', function() {
+    if(get_sisuko_n && ate_sisuko_n == 0){
+        counter++;
+        if(counter == 1){
+            document.getElementById('kowai_bgm').play();
+            document.getElementById('arisu_know').pause();
+            document.getElementById('arisu_know').currentTime = 0;
+            document.getElementById('displayImage').src = 'mikudayo-room.png';
+        }else if(counter == 2){
+            document.getElementById('mikudayo_single').play();
+        }else if(counter == 6){
+            document.getElementById('mikudayo_door_lock').play();
+        }else if(counter > 6 && counter < 18){
+            document.getElementById('mikudayo_single').play();
+        }else if(counter == 18){
+            document.getElementById('urusaiwa').play();
+            document.getElementById('displayImage').src = 'nahi_attack.png';
+        }else if(counter == 20){
+            document.getElementById('konnahi').play();
+        }else if(counter == 21){
+            document.getElementById('kusosupa').play();
+        }else if(counter == 27){
+            document.getElementById('nahi_e').play();
+        }else if(counter == 33){
+            document.getElementById('kowai_bgm').pause();
+            document.getElementById('kowai_bgm').currentTime = 0;
+            document.getElementById('boom').play();
+            document.getElementById('displayImage').src = 'mikudayo_bakuhatu.png';
+        }else if(counter == 37){
+            document.getElementById('tobu_higher').play();
+            document.getElementById('anatano_kansou').play();
+            document.getElementById('displayImage').src = 'hiroyuki_in_mikudayo.png';
+        }else if(counter == 42){
+            document.getElementById('nanka_data').play()
+        }else if(counter == 47){
+            document.getElementById('anatano_kansou').play()
+        }else if(counter == 51){
+            document.getElementById('displayImage').src = 'mikudayo_bakuhatu_sisan.png';
+            document.getElementById('boom').play()
+        }else if(counter == 55){
+            document.getElementById('displayImage').src = 'sky.png';
+        }else if(counter == 57){
+            document.getElementById('displayImage').src = 'wickey.png';
+        }else if(counter == 58){
+            document.getElementById('displayImage').src = 'arona_channel.png';
+        }else if(counter == 59){
+            document.getElementById('displayImage').src = 'sky.png';
+        }else if(counter == 63){
+            document.getElementById('displayImage').src = 'title_screen.png';
+            document.getElementById('hakusyu').play()
+            document.getElementById('omg').play()
+            document.getElementById('boom').play()
+            document.getElementById('next8').style.display = 'none';
+        }
+        updateMessage_mikudayo_withNahi();
+    }else if(get_nahi){
+        counter++;
+        if(counter == 1){
+            document.getElementById('kowai_bgm').play();
+            document.getElementById('arisu_know').pause();
+            document.getElementById('arisu_know').currentTime = 0;
+            document.getElementById('displayImage').src = 'mikudayo-room.png';
+        }else if(counter == 2){
+            document.getElementById('mikudayo_single').play();
+        }else if(counter == 6){
+            document.getElementById('mikudayo_door_lock').play();
+        }else if(counter > 6 && counter < 18){
+            document.getElementById('mikudayo_single').play();
+        }else if(counter == 18){
+            document.getElementById('urusaiwa').play();
+            document.getElementById('displayImage').src = 'nahi_attack.png';
+        }else if(counter == 20){
+            document.getElementById('konnahi').play();
+        }else if(counter == 21){
+            document.getElementById('kusosupa').play();
+        }else if(counter == 27){
+            document.getElementById('nahi_e').play();
+        }else if(counter == 28){
+            document.getElementById('big_bang').play();
+            document.getElementById('displayImage').src = 'gameover.png';
+            document.getElementById('next8').style.display = 'none';
+        }
+        updateMessage_mikudayo_withNahi();
+    }else{
+        counter++;
+        if(counter == 1){
+            document.getElementById('kowai_bgm').play();
+            document.getElementById('arisu_know').pause();
+            document.getElementById('arisu_know').currentTime = 0;
+            document.getElementById('displayImage').src = 'mikudayo-room.png';
+        }else if(counter == 2){
+            document.getElementById('mikudayo_single').play();
+        }else if(counter == 6){
+            document.getElementById('mikudayo_door_lock').play();
+        }else if(counter > 6 && counter < 18){
+            document.getElementById('mikudayo_single').play();
+        }else if(counter == 18){
+            document.getElementById('big_bang').play();
+            document.getElementById('displayImage').src = 'gameover.png';
+            document.getElementById('next8').style.display = 'none';
+        }
+        updateMessage_mikudayo();
+    }
+    
+});
+
+
+
+
+document.getElementById('Fan').addEventListener('click', function() {
+    stay_soren = 0;
+    stay_daniel = 0;
+    stay_gengen = 0;
+    stay_computer = 1;
+
+    if(did_break_door){
+        counter = 0;
+        messageIndex = 0;
+        
+        document.getElementById('arisu_know').play();
+        document.getElementById('displayImage').src = 'move_now.png';
+        document.getElementById('next7').style.display = 'inline-block';
+        document.getElementById('Soren').style.display = 'none';
+        document.getElementById('GenGen').style.display = 'none';
+        document.getElementById('Fan').style.display = 'none';
+        document.getElementById('Daniel').style.display = 'none';
+        document.getElementById('mikudayo').style.display = 'none';
+    }else{
+        document.getElementById('Soren').style.display = 'none';
+        document.getElementById('GenGen').style.display = 'none';
+        document.getElementById('Fan').style.display = 'none';
+        document.getElementById('Daniel').style.display = 'none';
+        document.getElementById('mikudayo').style.display = 'none';
+
+        document.getElementById('messageContainer').textContent = 'パズルを解かないと扉が開かないようだ・・・';
+        document.getElementById('displayImage').src = 'puzzle.png';
+        document.getElementById('Home').style.display = 'inline-block';
+        document.getElementById('one').style.display = 'inline-block';
+        document.getElementById('two').style.display = 'inline-block';
+        document.getElementById('three').style.display = 'inline-block';
+        document.getElementById('four').style.display = 'inline-block';
+        document.getElementById('five').style.display = 'inline-block';
+        document.getElementById('six').style.display = 'inline-block';
+        document.getElementById('seven').style.display = 'inline-block';
+        document.getElementById('eight').style.display = 'inline-block';
+        document.getElementById('nine').style.display = 'inline-block';
+        document.getElementById('zero').style.display = 'inline-block';
+
+        document.getElementById('item').style.display = 'inline-block';
+    }
+    
+    
+});
+
+
+
+document.getElementById('next7').addEventListener('click', function() {
+
+    counter++;
+    document.getElementById('displayImage').src = 'computer_room.png';
+    if(counter == 1){
+        document.getElementById('messageContainer').textContent = 'コンピューターのある部屋にやってきた。';
+        document.getElementById('arisu_know').pause();
+        document.getElementById('arisu_know').currentTime = 0;
+    }else if(counter == 2){
+        document.getElementById('messageContainer').textContent = 'どうする？';
+        document.getElementById('Home').style.display = 'inline-block';
+        document.getElementById('item').style.display = 'inline-block';
+        document.getElementById('next7').style.display = 'none';
+    }
+});
+
+
+
+
+document.getElementById('Daniel').addEventListener('click', function() {
+        stay_soren = 0;
+        stay_daniel = 1;
+        stay_gengen = 0;
+        stay_computer = 0;
+
+        counter = 0;
+        messageIndex = 0;
+        
+        document.getElementById('arisu_know').play();
+        document.getElementById('displayImage').src = 'move_now.png';
+        document.getElementById('next6').style.display = 'inline-block';
+        document.getElementById('Soren').style.display = 'none';
+        document.getElementById('GenGen').style.display = 'none';
+        document.getElementById('Fan').style.display = 'none';
+        document.getElementById('Daniel').style.display = 'none';
+        document.getElementById('mikudayo').style.display = 'none';
+});
+
+document.getElementById('next6').addEventListener('click', function() {
+    document.getElementById('arisu_know').pause();
+    document.getElementById('arisu_know').currentTime = 0;
+    document.getElementById('displayImage').src = 'daniel_room.png';
+
+    counter++;
+    if(counter == 2){
+        document.getElementById('dosukoi').play();
+    }else if(counter == 3){
+        document.getElementById('daniel_thanks').play();
+    }else if(counter == 4){
+        counter = 0;
+        messageIndex = 0
+        document.getElementById('next6').style.display = 'none';
+        document.getElementById('Home').style.display = 'inline-block';
+        document.getElementById('machine').style.display = 'inline-block';
+        document.getElementById('item').style.display = 'inline-block';
+
+        
+        
+    }
+    updateMessage_daniel();
+});
+
+document.getElementById('machine').addEventListener('click', function() {
+    if(get_nahi && ate_sisuko_n == 0){
+        get_sisuko_n = 1;
+        document.getElementById('displayImage').src = 'sisuko-n_item.png';
+        document.getElementById('sisuko-n_dayo').play();
+        document.getElementById('messageContainer').textContent = 'ダニエルからお礼にシスコーン(マイルドチョコ)をもらった！'
+
+    }else if(get_usb){
+        document.getElementById('messageContainer').textContent = 'ダニエル：ありがとう、君たちのおかげでアルゴリズムはついに完成したよ、、';
+    }else{
+        counter++;
+        if(counter == 1){
+            document.getElementById('dosukoi').play();
+        }else if(counter == 2){
+            document.getElementById('daniel1').play();
+        }else if(counter == 3){
+            document.getElementById('dosukoi').play();
+        }else if(counter == 4){
+            document.getElementById('daniel2').play();
+        }else if(counter == 5){
+            document.getElementById('dosukoi').play();
+        }else if(counter == 6){
+            document.getElementById('daniel3').play();
+        }else if(counter == 7){
+            document.getElementById('dosukoi').play();
+        }
+        updateMessage_daniel_machine();
+    }
+    
+});
+
+
+
+
+
+document.getElementById('Soren').addEventListener('click', function() {
+        stay_soren = 1;
+        stay_daniel = 0;
+        stay_gengen = 0;
+        stay_computer = 0;
+
+        counter = 0;
+        messageIndex = 0;
+        if(hattori_killed){
+            hattori_enter++;
+        }
+        
+        document.getElementById('arisu_know').play();
+        document.getElementById('displayImage').src = 'move_now.png';
+        document.getElementById('next2').style.display = 'inline-block';
+        document.getElementById('Soren').style.display = 'none';
+        document.getElementById('GenGen').style.display = 'none';
+        document.getElementById('Fan').style.display = 'none';
+        document.getElementById('Daniel').style.display = 'none';
+        document.getElementById('mikudayo').style.display = 'none';
+    
+    
+});
+
+document.getElementById('next2').addEventListener('click', function() {
+    counter++; 
+    document.getElementById('arisu_know').pause();
+    document.getElementById('arisu_know').currentTime = 0;
+    if(hattori_killed){
+        document.getElementById('item').style.display = 'inline-block';
+        document.getElementById('messageContainer').textContent = 'どうする？';
+        document.getElementById('displayImage').src = 'soren_kill_3.png';
+        document.getElementById('next2').style.display = 'none';
+        document.getElementById('Move').style.display = 'none';
+        document.getElementById('Search').style.display = 'inline-block';
+        document.getElementById('Home').style.display = 'inline-block';
+    }else{
+        if(counter == 1){
+            document.getElementById('soren_kokka').play();
+            document.getElementById('displayImage').src = 'soren_1.png';
+        }else if(counter == 6){
+            counter = 0;
+            document.getElementById('item').style.display = 'inline-block';
+            document.getElementById('next2').style.display = 'none';
+            document.getElementById('Move').style.display = 'inline-block';
+            document.getElementById('Search').style.display = 'inline-block';
+            document.getElementById('Home').style.display = 'inline-block';
+        }
+        updateMessage_soren();
+    }
+    
+
+    
+});
+
+
+
+
+document.getElementById('GenGen').addEventListener('click', function() {
+    stay_soren = 0;
+    stay_daniel = 0;
+    stay_gengen = 1;
+    stay_computer = 0;
+
+    counter = 0;
+    messageIndex = 0;
+
+    document.getElementById('arisu_know').play();
+        document.getElementById('displayImage').src = 'move_now.png';
+        document.getElementById('next5').style.display = 'inline-block';
+        document.getElementById('Soren').style.display = 'none';
+        document.getElementById('GenGen').style.display = 'none';
+        document.getElementById('Fan').style.display = 'none';
+        document.getElementById('Daniel').style.display = 'none';
+        document.getElementById('mikudayo').style.display = 'none';
+
+    
+});
+
+
+
+document.getElementById('next5').addEventListener('click', function() {
+    counter++;
+    if(get_gengen){
+        document.getElementById('displayImage').src = 'gengen_join_sita_room.png';
+    }else{
+        document.getElementById('displayImage').src = 'gengen_room.png';
+    }
+    
+    if(counter == 1){
+        document.getElementById('arisu_know').pause();
+        document.getElementById('arisu_know').currentTime = 0;
+    }else if(counter == 2){
+        document.getElementById('welcome_gengen').play();
+    }else if(counter == 4){
+        document.getElementById('dosukoi').play();
+    }else if(counter == 5){
+        counter = 0;
+        messageIndex = 0;
+        document.getElementById('next5').style.display = 'none';
+        document.getElementById('Search2').style.display = 'inline-block';
+        document.getElementById('Home').style.display = 'inline-block';
+        document.getElementById('item').style.display = 'inline-block';
+
+    }
+    updateMessage_gengen();
+});
+
+
+
+
+
+
+document.getElementById('Search2').addEventListener('click', function() {
+    if(get_gengen && get_euclid == 0){
+        document.getElementById('item_oku').play();
+        document.getElementById('messageContainer').textContent = 'ユークリッドの「原論」を手に入れた';
+        document.getElementById('displayImage').src = 'euclid_item.png';
+        get_euclid = 1;
+    }else if(get_bottle == 0){
+        get_bottle = 1;
+        document.getElementById('item_oku').play();
+        document.getElementById('messageContainer').textContent = '空のペットボトルを発見した！';
+        document.getElementById('displayImage').src = 'bottle_item.png';
+    }else{
+        document.getElementById('messageContainer').textContent = '何も見つからなかった、、';
+    }
+    
+});
+
+
+document.getElementById('Move').addEventListener('click', function() {
+    document.getElementById('Kill').style.display = 'inline-block';
+    document.getElementById('Move').style.display = 'none';
+    document.getElementById('Search').style.display = 'none';
+    document.getElementById('Home').style.display = 'none';
+    document.getElementById('item').style.display = 'none';
+});
+
+document.getElementById('Kill').addEventListener('click', function() {
+    messageIndex = 1;
+    counter++; 
+    updateMessage_soren_kill();
+    document.getElementById('Kill').style.display = 'none';
+    document.getElementById('displayImage').src = 'soren_kill_1.png';
+    document.getElementById('next3').style.display = 'inline-block';
+});
+
+document.getElementById('next3').addEventListener('click', function() {
+    counter++; 
+    if(counter == 4){
+        document.getElementById('displayImage').src = 'soren_kill_2.png';
+        document.getElementById('soren_kokka').pause();
+        document.getElementById('soren_kokka').currentTime = 0;
+        document.getElementById('halo_sensei').play();
+    }else if(counter == 5){
+        document.getElementById('time_arona').play();
+    }else if(counter == 7){
+        document.getElementById('Hanko-ki').play();
+        document.getElementById('big_bang').play();
+    }else if(counter == 8){
+        hattori_killed = 1;
+        document.getElementById('sikyo').play();
+        document.getElementById('displayImage').src = 'soren_kill_3.png';
+    }else if(counter == 11){
+        counter = 0;
+        document.getElementById('next3').style.display = 'none';
+        document.getElementById('next2').style.display = 'none';
+        document.getElementById('next4').style.display = 'none';
+        document.getElementById('Move').style.display = 'none';
+        document.getElementById('Search').style.display = 'inline-block';
+        document.getElementById('Home').style.display = 'inline-block';
+    }
+    updateMessage_soren_kill();
+});
+
+
+document.getElementById('Search').addEventListener('click', function() {
+    if(hattori_killed && hattori_enter >= 1 && get_hossi_ == 0){
+        get_hossi_ = 1;
+        document.getElementById('displayImage').src = 'gomenne_hossi-item.png';
+        document.getElementById('get-hossi-').play();
+        document.getElementById('messageContainer').textContent = '服部の死骸からこみトレ40新刊「ごめんねホシノ先輩!!」が見つかった！';
+    }else if(get_Alumi == 0 && hattori_killed){
+        get_Alumi = 1;
+        document.getElementById('displayImage').src = 'Alumi_item.png';
+        document.getElementById('item_oku').play();
+        document.getElementById('messageContainer').textContent = 'アルミホイルを手に入れた！';
+    }else if(get_M1911 == 0 && hattori_killed){
+        get_M1911 = 1;
+        document.getElementById('displayImage').src = 'M1911_item.png';
+        document.getElementById('get_M1911_').play();
+        document.getElementById('messageContainer').textContent = '部屋の奥にあるテントから拳銃を手に入れた！';
+    }else if(get_M1911 == 0){
+        get_M1911 = 1;
+        document.getElementById('displayImage').src = 'M1911_item_2.png';
+        document.getElementById('get_M1911_').play();
+        document.getElementById('messageContainer').textContent = '部屋の奥にあるテントから拳銃を手に入れた！';
+    }else{
+        document.getElementById('messageContainer').textContent = '何も見つからなかった、、';
+    }
+});
+
+document.getElementById('Home').addEventListener('click', function() {
+    document.getElementById('item').style.display = 'none';
+
+    document.getElementById('soren_kokka').pause();
+    document.getElementById('arisu_know').play();
+    document.getElementById('displayImage').src = 'move_now.png';
+
+    document.getElementById('soren_kokka').currentTime = 0;
+    document.getElementById('next4').style.display = 'inline-block';
+    document.getElementById('next5').style.display = 'none';
+    document.getElementById('Join').style.display = 'none';
+    document.getElementById('about_euclid').style.display = 'none';
+    document.getElementById('machine').style.display = 'none';
+    document.getElementById('Move').style.display = 'none';
+    document.getElementById('Search').style.display = 'none';
+    document.getElementById('Search2').style.display = 'none';
+    document.getElementById('Home').style.display = 'none'
+    document.getElementById('power_talk').style.display = 'none'
+    document.getElementById('Make_boom').style.display = 'none'
+    document.getElementById('gain_nahi').style.display = 'none'
+
+    document.getElementById('one').style.display = 'none';
+    document.getElementById('two').style.display = 'none';
+    document.getElementById('three').style.display = 'none';
+    document.getElementById('four').style.display = 'none';
+    document.getElementById('five').style.display = 'none';
+    document.getElementById('six').style.display = 'none';
+    document.getElementById('seven').style.display = 'none';
+    document.getElementById('eight').style.display = 'none';
+    document.getElementById('nine').style.display = 'none';
+    document.getElementById('zero').style.display = 'none';
+    document.getElementById('enable_nahi').style.display = 'none';
+    document.getElementById('break_door').style.display = 'none';
+    document.getElementById('next7').style.display = 'none';
+
+
+    document.getElementById('Alumi').style.display = 'none';
+    document.getElementById('hossi-').style.display = 'none';
+    document.getElementById('M1911').style.display = 'none';
+    document.getElementById('bottle').style.display = 'none';
+    document.getElementById('euclid').style.display = 'none';
+    document.getElementById('usb').style.display = 'none';
+    document.getElementById('hu_sen').style.display = 'none';
+    document.getElementById('senzai').style.display = 'none';
+    document.getElementById('suiso_bakudan').style.display = 'none';
+    document.getElementById('boot_nahi').style.display = 'none';
+    document.getElementById('sisuko-n').style.display = 'none';
+    document.getElementById('item').style.display = 'none';
+
+    
+    
+});
+
+
+document.getElementById('next4').addEventListener('click', function() {
+    document.getElementById('arisu_know').pause();
+    document.getElementById('arisu_know').currentTime = 0;
+    document.getElementById('displayImage').src = 'home_1.png';
+    document.getElementById('next4').style.display = 'none';
+    document.getElementById('Soren').style.display = 'inline-block';
+    document.getElementById('GenGen').style.display = 'inline-block';
+    document.getElementById('Fan').style.display = 'inline-block';
+    document.getElementById('Daniel').style.display = 'inline-block';
+    document.getElementById('mikudayo').style.display = 'inline-block';
+    document.getElementById('messageContainer').textContent = 'どうする？';
+});
+
+
+
+
+
+
+function updateMessage_ep1() {
+        document.getElementById('messageContainer').textContent = messages[messageIndex];
+        messageIndex++;
+}
+
+function updateMessage_soren() {
+        document.getElementById('messageContainer').textContent = soren[messageIndex];
+        messageIndex++;
+}
+
+function updateMessage_soren_kill() {
+        document.getElementById('messageContainer').textContent = soren_kill[messageIndex];
+        messageIndex++;
+}
+
+function updateMessage_gengen() {
+        document.getElementById('messageContainer').textContent = gengen[messageIndex];
+        messageIndex++;
+}
+
+function updateMessage_gengen_join(){
+    document.getElementById('messageContainer').textContent = gengen_join[messageIndex];
+    messageIndex++;
+}
+
+function updateMessage_gengen_join_suru(){
+    document.getElementById('messageContainer').textContent = gengen_join_suru[messageIndex];
+    messageIndex++;
+}
+
+function updateMessage_daniel(){
+    document.getElementById('messageContainer').textContent = daniel[messageIndex];
+    messageIndex++;
+}
+
+function updateMessage_daniel_machine(){
+    document.getElementById('messageContainer').textContent = daniel_machine[messageIndex];
+    messageIndex++;
+}
+
+function updateMessage_daniel_euclid(){
+    document.getElementById('messageContainer').textContent = daniel_euclid[messageIndex];
+    messageIndex++;
+}
+
+function updateMessage_power_talk(){
+    document.getElementById('messageContainer').textContent = power_talk[messageIndex];
+    messageIndex++;
+}
+
+function updateMessage_mikudayo(){
+    document.getElementById('messageContainer').textContent = mikudayo[messageIndex];
+    messageIndex++;
+}
+
+function updateMessage_mikudayo_withNahi(){
+    document.getElementById('messageContainer').textContent = mikudayo_withNahi[messageIndex];
+    messageIndex++;
+}
+
+function updateMessage_mikudayo_withNahi(){
+    document.getElementById('messageContainer').textContent = mikudayo_withHiroyuki[messageIndex];
+    messageIndex++;
+}
+
+    </script>
+</body>
+</html>
